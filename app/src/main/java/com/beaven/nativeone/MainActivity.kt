@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), GLSurfaceView.Renderer {
             setRenderer(this@MainActivity)
             renderMode = RENDERMODE_WHEN_DIRTY
         }
-        nativeRender.nativeSetRenderType(IMyNativeRendererType.SAMPLE_TYPE, IMyNativeRendererType.SAMPLE_TYPE_TRIANGLE)
+        nativeRender.nativeSetRenderType(IMyNativeRendererType.SAMPLE_TYPE, IMyNativeRendererType.SAMPLE_TYPE_TRIANGLE2)
     }
 
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {

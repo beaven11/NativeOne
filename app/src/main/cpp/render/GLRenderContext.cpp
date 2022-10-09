@@ -4,6 +4,7 @@
 
 #include "GLRenderContext.h"
 #include "../sample/NativeTriangle.h"
+#include "../sample/NativeTriangle2.h"
 
 GLRenderContext *GLRenderContext::m_pContext = nullptr;
 
@@ -29,6 +30,7 @@ void GLRenderContext::SetRenderType(int sampleCategoryType, int renderSampleType
                 p_sample = new NativeTriangle();
                 break;
             case SAMPLE_TYPE_KEY_TRIANGLE2:
+                p_sample = new NativeTriangle2();
                 break;
             default:
                 p_sample = nullptr;

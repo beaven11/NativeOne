@@ -5,6 +5,7 @@
 #include "GLRenderContext.h"
 #include "../sample/NativeTriangle.h"
 #include "../sample/NativeTriangle2.h"
+#include "../sample/NativeTriangle3.h"
 
 GLRenderContext *GLRenderContext::m_pContext = nullptr;
 
@@ -23,7 +24,6 @@ GLRenderContext::~GLRenderContext() {
 }
 
 void GLRenderContext::SetRenderType(int sampleCategoryType, int renderSampleType) {
-    LOGI("GLRenderContext SetRenderType:%d", renderSampleType)
     if (sampleCategoryType == SAMPLE_TYPE) {
         switch (renderSampleType) {
             case SAMPLE_TYPE_KEY_TRIANGLE:
@@ -32,11 +32,15 @@ void GLRenderContext::SetRenderType(int sampleCategoryType, int renderSampleType
             case SAMPLE_TYPE_KEY_TRIANGLE2:
                 p_sample = new NativeTriangle2();
                 break;
+            case SAMPLE_TYPE_KEY_TRIANGLE3:
+                p_sample = new NativeTriangle3();
+                break;
             default:
                 p_sample = nullptr;
                 break;
         }
     }
+    LOGI("GLRenderContext SetRenderType:%d, sample:%d", renderSampleType, p_sample == nullptr)
 }
 
 void GLRenderContext::OnSurfaceCreated(JNIEnv *env, jobject assetManager) {
